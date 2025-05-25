@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import CheckUsername from './Authorization/CheckUserName.jsx';
+import CheckPassword from './Authorization/CheckPassword.jsx';
 
 function App() {
+  const [step, setStep] = useState('username');
+  const [userData, setUserData] = useState({
+    username: '',
+    device_id: '',
+    access_code: '',
+  });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleUsernameSuccess = ({ username, device_id, access_code }) => {
+    setUserData({ username, device_id, access_code });
+    setStep('password');
+  };
+
+  const handleLoginSuccess = ({ user_id, username }) => {
+    setIsLoggedIn(true);
+    console.log('Login successful:', { user_id, username });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {step === 'username' && (
+        <CheckUsername onNext={handleUsernameSuccess} />
+      )}
+      {step === 'password' && !isLoggedIn && (
+        <CheckPassword
+          username={userData.username}
+          device_id={userData.device_id}
+          access_code={userData.access_code}
+          onLoginSuccess={handleLoginSuccess}
+        />
+      )}
+      {isLoggedIn && (
+        <div>
+          <h1 className="text-3xl font-bold text-blue-500 p-4">Welcome, {userData.username}!</h1>
+          {/* Optionally render another component or redirect */}
+        </div>
+      )}
     </div>
   );
 }
