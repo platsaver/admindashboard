@@ -5,3 +5,33 @@
 }
 @tailwind components;
 @tailwind utilities;
+
+@layer antd {
+  .ant-card {
+    border: 2px solid #d1d5db !important; /* Tailwind's gray-300, darker for visibility */
+    border-radius: 0.5rem !important;
+  }
+  .ant-card-head {
+    background-color: #f9fafb; /* Tailwind's gray-50 */
+    border-bottom: 2px solid #d1d5db !important;
+  }
+  .ant-card-body {
+    padding: 16px !important;
+  }
+  .ant-divider {
+    margin: 16px 0;
+    border-color: #d1d5db;
+  }
+  .ant-list-item {
+    padding: 8px 0 !important;
+  }
+  .ant-progress-bg {
+    border-radius: 4px !important;
+  }
+  .ant-progress {
+    line-height: 1 !important;
+  }
+  .ant-progress-inner {
+    border: 1px solid #d1d5db !important; /* Add border to progress trail */
+  }
+}
