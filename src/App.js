@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import CheckUsername from './Authorization/CheckUserName.jsx';
 import CheckPassword from './Authorization/CheckPassword.jsx';
+import Admin from './Admin.jsx';
 
 function App() {
   const [step, setStep] = useState('username');
@@ -36,10 +37,7 @@ function App() {
         />
       )}
       {isLoggedIn && (
-        <div>
-          <h1 className="text-3xl font-bold text-blue-500 p-4">Welcome, {userData.username}!</h1>
-          {/* Optionally render another component or redirect */}
-        </div>
+        <Admin username={userData.username} />
       )}
     </div>
   );
