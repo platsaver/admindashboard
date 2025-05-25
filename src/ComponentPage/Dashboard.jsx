@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col, Divider, Row, List, Button, Progress } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, 
+    CartesianGrid, Tooltip, Legend, 
+    ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const fakeData = [
   { name: 'Tuần 1', ChỉSốA: 400, ChỉSốB: 300 },
@@ -128,7 +129,7 @@ const App = () => (
     </Row>
     <Divider orientation="left" />
     <Row gutter={[16, 16]}>
-      <Col span={8}>
+      <Col span={8}  xs={24} lg={8}>
         <Card
           title="Tiến độ doanh nghiệp"
           className="shadow-sm rounded-lg bg-white border-2 border-gray-300"
@@ -174,7 +175,7 @@ const App = () => (
           </div>
         </Card>
       </Col>
-      <Col span={16}>
+      <Col span={16}  xs={24} lg={16}>
         <Card
           title={
             <div className="flex justify-between items-center">
