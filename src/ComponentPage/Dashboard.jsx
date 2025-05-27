@@ -5,11 +5,11 @@ import { LineChart, Line, XAxis, YAxis,
     ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const fakeData = [
-  { name: 'Tuần 1', ChỉSốA: 400, ChỉSốB: 300 },
-  { name: 'Tuần 2', ChỉSốA: 450, ChỉSốB: 320 },
-  { name: 'Tuần 3', ChỉSốA: 500, ChỉSốB: 350 },
-  { name: 'Tuần 4', ChỉSốA: 520, ChỉSốB: 370 },
-  { name: 'Tuần 5', ChỉSốA: 540, ChỉSốB: 390 },
+  { name: 'Tuần 1', ChỉSốA: 400, ChỉSốB: 150 },
+  { name: 'Tuần 2', ChỉSốA: 100, ChỉSốB: 320 },
+  { name: 'Tuần 3', ChỉSốA: 300, ChỉSốB: 270 },
+  { name: 'Tuần 4', ChỉSốA: 520, ChỉSốB: 250 },
+  { name: 'Tuần 5', ChỉSốA: 400, ChỉSốB: 500 },
 ];
 const data = [
   { name: 'Vật chất', value: 50 },
@@ -142,10 +142,7 @@ const App = () => (
               </div>
               <Progress
                 percent={75}
-                strokeColor="#1890ff"
-                trailColor="#e5e7eb"
                 showInfo={false}
-                className="border border-gray-300 rounded"
               />
             </div>
             <div>
@@ -154,10 +151,7 @@ const App = () => (
               </div>
               <Progress
                 percent={60}
-                strokeColor="#52c41a"
-                trailColor="#e5e7eb"
                 showInfo={false}
-                className="border border-gray-300 rounded"
               />
             </div>
             <div>
@@ -166,10 +160,7 @@ const App = () => (
               </div>
               <Progress
                 percent={85}
-                strokeColor="#faad14"
-                trailColor="#e5e7eb"
                 showInfo={false}
-                className="border border-gray-300 rounded"
               />
             </div>
           </div>
